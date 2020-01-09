@@ -26,12 +26,12 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class HomepageFragment extends Fragment {
 
     SliderView sliderView;
     RecyclerView recyclerView;
 
-    public HomeFragment() {
+    public HomepageFragment() {
         // Required empty public constructor
     }
 
@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment {
 
 
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_homepage, container, false);
         sliderView = view.findViewById(R.id.imageSlider);
         recyclerView=view.findViewById(R.id.itemRecyclerView);
 

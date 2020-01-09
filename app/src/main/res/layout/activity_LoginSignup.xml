@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/darazsignup"
     android:orientation="vertical"
-    tools:context=".SigninupActivity">
+    tools:context=".LoginSignupActivity">
 
 
     <TextView

@@ -45,7 +45,7 @@ public class AccountFragment extends Fragment {
         this.btnSignInUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(),SigninupActivity.class));
+                startActivity(new Intent(getActivity(), LoginSignupActivity.class));
             }
         });
         // Inflate the layout for this fragment

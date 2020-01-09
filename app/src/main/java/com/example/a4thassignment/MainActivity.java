@@ -22,20 +22,20 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView=findViewById(R.id.bottomnavigation);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
-        openFragment(new HomeFragment());
+        openFragment(new HomepageFragment());
     }
     BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()) {
                         case R.id.navigation_home:
-                            openFragment(new HomeFragment());
+                            openFragment(new HomepageFragment());
                             return true;
                         case R.id.navigation_message:
                             openFragment(new MessageFragment());
                             return true;
                         case R.id.navigation_cart:
-                            openFragment(new CartFragment());
+                            openFragment(new MyCartFragment());
                             return true;
                         case R.id.navigation_account:
                             openFragment(new AccountFragment());

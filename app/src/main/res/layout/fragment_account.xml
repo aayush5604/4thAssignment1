@@ -54,7 +54,8 @@
                 android:layout_alignParentEnd="true"
                 android:textColor="@color/orange"
                 android:text="View All >"
-                android:textSize="15dp"/>
+                android:textSize="15dp"
+                android:layout_alignParentRight="true" />
 
         </RelativeLayout>
 

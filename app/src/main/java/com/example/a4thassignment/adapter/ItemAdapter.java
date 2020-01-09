@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4thassignment.R;
+import com.example.a4thassignment.model.Items;
 
 import java.util.List;
 

@@ -11,13 +11,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a4thassignment.R;
+import com.example.a4thassignment.Url.Url;
 import com.example.a4thassignment.model.Items;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.itemAdapterViewHolder> {
-    private Context context;
-    private List<Items> itemsList;
+     Context context;
+     List<Items> itemsList;
 
     public ItemAdapter(Context context, List<Items> itemsList) {
         this.context = context;
@@ -33,9 +35,11 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.itemAdapterVie
     @Override
     public void onBindViewHolder(@NonNull ItemAdapter.itemAdapterViewHolder holder, int position) {
         final Items items=itemsList.get(position);
-        holder.imgItem.setImageResource(items.getImgId());
-        holder.tvItemDesc.setText(items.getDesc());
-        holder.tvItemPrice.setText("Rs. "+items.getPrice()+" /-");
+
+
+        holder.tvItemdetails.setText(items.getProductName());
+        holder.ItemPrice.setText("Rs. "+items.getPrice()+" /-");
+        Picasso.get().load(Url.base_url_image+itemsList.get(position).getImgName()).into(holder.imgItem);
     }
 
     @Override
@@ -47,13 +51,13 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.itemAdapterVie
     public class itemAdapterViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imgItem;
-        TextView tvItemDesc, tvItemPrice;
+        TextView tvItemdetails, ItemPrice;
 
         public itemAdapterViewHolder(@NonNull View itemView) {
             super(itemView);
             this.imgItem = itemView.findViewById(R.id.imgItem);
-            this.tvItemDesc = itemView.findViewById(R.id.tvItemDesc);
-            this.tvItemPrice = itemView.findViewById(R.id.tvItemPrice);
+            this.tvItemdetails = itemView.findViewById(R.id.tvItemDesc);
+            this.ItemPrice = itemView.findViewById(R.id.tvItemPrice);
         }
     }
 }

@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class SIgnUpActivity extends AppCompatActivity {
 
-    EditText PhoneNo, SMS;
+    EditText mobileNumber, SMS;
     Button btnNext, btnSend;
     TextView tvLogin;
     int min = 1;
@@ -27,16 +27,16 @@ public class SIgnUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         this.btnNext=findViewById(R.id.btnNext);
-        PhoneNo=findViewById(R.id.etMobileNumber);
+        mobileNumber=findViewById(R.id.etMobileNumber);
         SMS= findViewById(R.id.etSmsCode);
         tvLogin=findViewById(R.id.tvLogin);
         btnSend=findViewById(R.id.btnsend);
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (TextUtils.isEmpty(PhoneNo.getText().toString()))
+                if (TextUtils.isEmpty(mobileNumber.getText().toString()))
                 {
-                    PhoneNo.setError("Mandatory Field");
+                    mobileNumber.setError("Mandatory Field");
                     return;
                 }
                 Thread thread = new Thread(){
@@ -60,9 +60,9 @@ public class SIgnUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (TextUtils.isEmpty(PhoneNo.getText().toString()))
+                if (TextUtils.isEmpty(mobileNumber.getText().toString()))
                 {
-                    PhoneNo.setError("Mandatory Field");
+                    mobileNumber.setError("Mandatory Field");
                     return;
                 }
                 else if (TextUtils.isEmpty(SMS.getText().toString())){
@@ -70,7 +70,7 @@ public class SIgnUpActivity extends AppCompatActivity {
                     return;
                 }
                 Intent intent = new Intent(SIgnUpActivity.this, RegisterActivity.class);
-                String No = PhoneNo.getText().toString();
+                String No = mobileNumber.getText().toString();
                 String sms = SMS.getText().toString();
                 Bundle bundle = new Bundle();
                 bundle.putString("PhoneNo", No);

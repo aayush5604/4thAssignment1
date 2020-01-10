@@ -16,11 +16,11 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginTop="45dp"
-        android:background="@color/lightOrange">
+        android:background="@drawable/backgroundsigninup">
 
         <Button
             android:id="@+id/btnSignInUp"
-            android:text="Signin / Signup"
+            android:text="Login/ Signup"
             android:textAllCaps="false"
             android:textColor="@color/orange"
             android:layout_marginTop="45dp"

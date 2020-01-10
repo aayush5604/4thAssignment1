@@ -11,9 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.a4thassignment.Url.Url;
 import com.example.a4thassignment.adapter.ItemAdapter;
 import com.example.a4thassignment.adapter.SliderAdapter;
+import com.example.a4thassignment.api.ProductApi;
 import com.example.a4thassignment.model.Items;
 import com.smarteist.autoimageslider.IndicatorAnimations;
 import com.smarteist.autoimageslider.SliderAnimations;
@@ -21,6 +24,10 @@ import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 /**
@@ -58,16 +65,33 @@ public class HomepageFragment extends Fragment {
         sliderView.startAutoCycle();
 
         //set item list in recycler view
-        List<Items> itemList=new ArrayList<>();
-        itemList.add(new Items(R.drawable.imagesshopping1,"Item description",1200));
-        itemList.add(new Items(R.drawable.shoppingimages2,"Item description",1300));
-        itemList.add(new Items(R.drawable.shoppingimages3,"Item description",1400));
-        itemList.add(new Items(R.drawable.menclothing,"Item description",1500));
-
-        final ItemAdapter itemAdapter=new ItemAdapter(getContext(),itemList);
-        recyclerView.setAdapter(itemAdapter);
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
+getProduct();
         return view;
     }
+   private void getProduct(){
+       ProductApi productApi= Url.getInstance().create(ProductApi.class);
+       Call<List<Items>> listCall = productApi.getProduct();
+       listCall.enqueue(new Callback<List<Items>>() {
+           @Override
+           public void onResponse(Call<List<Items>> call, Response<List<Items>> response) {
+               if(!response.isSuccessful()){
+                   Toast.makeText(getContext(), "Toast " + response.code(), Toast.LENGTH_SHORT).show();
+                   return;
+           }
+               ItemAdapter itemAdapter=new ItemAdapter(getActivity(),response.body());
+               recyclerView.setAdapter(itemAdapter);
+               recyclerView.setHasFixedSize(true);
+               recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
+               itemAdapter.notifyDataSetChanged();
+           }
+
+
+           @Override
+           public void onFailure(Call<List<Items>> call, Throwable t) {
+               Toast.makeText(getActivity(), "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+
+           }
+       });
+   }
 
 }

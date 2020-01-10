@@ -1,30 +1,30 @@
 package com.example.a4thassignment.model;
 
 public class Items {
-    int imgId;
-    String desc;
+    String imgName;
+    String ProductName;
     float price;
 
-    public Items(int imgId, String desc, float price) {
-        this.imgId = imgId;
-        this.desc = desc;
+    public Items(String imgName, String productName, float price) {
+        this.imgName = imgName;
+        ProductName = productName;
         this.price = price;
     }
 
-    public int getImgId() {
-        return imgId;
+    public String getImgName() {
+        return imgName;
     }
 
-    public void setImgId(int imgId) {
-        this.imgId = imgId;
+    public void setImgName(String imgName) {
+        this.imgName = imgName;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getProductName() {
+        return ProductName;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setProductName(String productName) {
+        ProductName = productName;
     }
 
     public float getPrice() {

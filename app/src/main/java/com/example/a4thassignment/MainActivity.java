@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                             openFragment(new MyCartFragment());
                             return true;
                         case R.id.navigation_account:
-                            openFragment(new AccountFragment());
+                            openFragment(new MyAccountFragment());
                             return true;
                     }
                     return false;

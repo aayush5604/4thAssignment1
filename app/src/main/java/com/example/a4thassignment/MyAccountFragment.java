@@ -17,14 +17,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AccountFragment extends Fragment {
+public class MyAccountFragment extends Fragment {
 
     Button btnSignInUp;
 
     BottomNavigationView my_order_bottom_navigation,my_service_bottom_navigation;
 
 
-    public AccountFragment() {
+    public MyAccountFragment() {
         // Required empty public constructor
     }
 

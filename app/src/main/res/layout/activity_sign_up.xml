@@ -84,7 +84,7 @@
                 android:layout_marginLeft="5dp" />
 
             <Button
-                android:id="@+id/btnResend"
+                android:id="@+id/btnsend"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:text="SEND"

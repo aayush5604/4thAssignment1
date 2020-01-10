@@ -42,16 +42,16 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
 
         switch (position) {
             case 0:
-                Glide.with(viewHolder.itemView).load(R.drawable.imagesshopping1).into(viewHolder.imageSlideBackground);
+                Glide.with(viewHolder.itemView).load(R.drawable.myshoppingslider1).into(viewHolder.imageSlideBackground);
                 break;
             case 1:
-                Glide.with(viewHolder.itemView).load(R.drawable.shoppingimages2).into(viewHolder.imageSlideBackground);
+                Glide.with(viewHolder.itemView).load(R.drawable.myshoppingslider2).into(viewHolder.imageSlideBackground);
                 break;
             case 2:
-                Glide.with(viewHolder.itemView).load(R.drawable.shoppingimages3).into(viewHolder.imageSlideBackground);
+                Glide.with(viewHolder.itemView).load(R.drawable.myshoppingslide3).into(viewHolder.imageSlideBackground);
                 break;
             default:
-                Glide.with(viewHolder.itemView).load(R.drawable.imagesshopping1).into(viewHolder.imageSlideBackground);
+                Glide.with(viewHolder.itemView).load(R.drawable.myshoppingslider1).into(viewHolder.imageSlideBackground);
                 break;
 
         }

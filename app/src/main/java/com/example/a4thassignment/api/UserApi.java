@@ -14,6 +14,6 @@ public interface UserApi {
     Call<SignUpResponse> registerUser(@Body User users);
 
     @FormUrlEncoded
-    @POST("user/login")
-    Call<SignUpResponse> checkUser(@Field("mobileNumber") String number,@Field("password") String password);
+    @POST("login")
+    Call<SignUpResponse> checkUser(@Field("email") String number,@Field("password") String password);
 }

@@ -1,9 +1,6 @@
 package com.example.a4thassignment.serverresponse;
 
 public class SignUpResponse {
-
-
-
         private String status;
         private String token;
 

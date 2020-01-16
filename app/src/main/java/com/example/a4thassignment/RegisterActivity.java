@@ -69,13 +69,13 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                String PhoneNo = bundle.getString("PhoneNo");
+                String Phoneno = bundle.getString("PhoneNo");
                 String SMS = bundle.getString("SMS");
                 String Name = FullName.getText().toString();
                 String email = Email.getText().toString();
                 String password = Password.getText().toString();
 
-                User users = new User(Name, email, password,PhoneNo, SMS);
+                User users = new User(Name,email,Phoneno,password,SMS);
 
                 UserApi usersAPI = Url.getInstance().create(UserApi.class);
                 Call<SignUpResponse> signUpCall = usersAPI.registerUser(users);

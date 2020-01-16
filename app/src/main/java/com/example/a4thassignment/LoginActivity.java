@@ -52,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         StrictModeClass.StrictMode();
         if (loginBLL.checkUser(email, password)) {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
             startActivity(intent);
             finish();
         } else {
